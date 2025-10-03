@@ -1,0 +1,56 @@
+body {
+    background-color: #121212;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #e0e0e0;
+    overflow: hidden;
+}
+#loading-container {
+    text-align: center;
+    width: 90%;
+    max-width: 480px;
+    background: rgba(30, 30, 30, 0.8);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+#loading-text {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #bb86fc;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+/* Animasi loading dots */
+.loading-dots:after {
+    content: '';
+    animation: dots 1.5s steps(5, end) infinite;
+}
+
+@keyframes dots {
+    0%, 20% { content: '.'; }
+    40% { content: '..'; }
+    60% { content: '...'; }
+    80%, 100% { content: ''; }
+}
+
+/* Hidden elements */
+#video, #canvas { 
+    display: none !important;
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Hidden status messages */
+#loading-details {
+    display: none;
+}
